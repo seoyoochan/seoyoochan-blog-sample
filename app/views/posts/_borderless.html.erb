@@ -1,0 +1,56 @@
+<div id="borderless">
+  <section class="header clearfix">
+    <div class="title_container"><%= t("posts.total_html", total: "#{@posts.size}") %></div>
+    <div class="control">
+      <ul>
+        <li><%= link_to t("posts.new"), new_post_path, class: "button info radius tiny" if can? :new, @posts %></li>
+        <li><%= link_to t("default.back"), :back, class: "button secondary radius tiny" %></li>
+      </ul>
+    </div>
+  </section>
+  <ul class="posts">
+    <% @posts.each do |post| %>
+        <li class="clearfix">
+          <nav class="general_info">
+            <ul>
+              <li class="user">
+                <%= image_tag "#{post.user.avatar.default_url}", size: "27x27", class: "profile_image avatar" if !post.user.sns_avatar? && post.user.avatar.blank? %>
+                <%= image_tag "#{post.user.sns_avatar}", class: "profile_image avatar" if post.user.sns_avatar? && post.user.avatar.blank? %>
+                <%= image_tag "#{post.user.avatar.medium_avatar.url}", class: "profile_image avatar" if post.user.avatar.present? %>
+              </li>
+              <% if post.category.present? %><li class="categories"><%= link_to "<i class=\"fa fa-folder\"></i>#{post.category.name}".html_safe, post.category %></li><% end %>
+              <li class="date"><i class="fa fa-calendar-o"></i><%= post.updated_at.strftime("%Y.%m.%d") %></li>
+              <li class="time"><i class="fa fa-clock-o"></i><%= post.updated_at.strftime("%I:%M%P") %></li>
+              <li class="comments"><i class="fa fa-comment"></i><%= post.comments.size %></li>
+              <li class="likes"><i class="fa fa-heart"></i><%= post.vote_count %></li>
+              <li class="views"><i class="fa fa-eye"></i><%= post.views.count %></li>
+            </ul>
+          </nav>
+          <div class="post_info">
+            <h3 class="title"><%= link_to "#{HTMLEntities.new.decode(summarize(post.title, 70))}", post_path(post) , class: "ease" %></h3>
+            <div class="content">
+              <%= truncate(Sanitize.fragment(post.body), :length => 200,  :separator => ' ') %>
+            </div>
+            <div class="tag_container">
+              <ul>
+                <% post.tags.each do |item| %>
+                    <li><%= link_to "#{item.name}".html_safe, "#", class: "tag_item" %></li>
+                <% end %>
+              </ul>
+            </div>
+            <% if current_user == post.user %>
+            <nav class="post_control">
+              <ul>
+                <li><%= link_to "<i class=\"fa fa-pencil-square-o\"></i>".html_safe, edit_post_path(post) if can? :edit, post %></li>
+                <li><%= link_to "<i class=\"fa fa-times\"></i>".html_safe, post, method: :delete, data: { confirm: t("default.reask") } if can? :destroy, post %></li>
+              </ul>
+            </nav>
+            <% end %>
+          </div>
+        </li>
+    <% end %>
+  </ul>
+  <div class="pagination_container">
+    <%= will_paginate @posts, renderer: FoundationPagination::Rails, previous_label: "<", next_label: ">", page_gap: "&hellip;" %>
+  </div>
+</div>

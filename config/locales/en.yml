@@ -1,0 +1,403 @@
+en:
+  meta_tags:
+    home:
+      title: SEO YOOCHAN
+      description: I am a Developer using Ruby on Rails, Javascript, jQuery, HTML & CSS, Ruby, and PHP. On this website you can find some useful tutorials, resources, workarounds, and articles handpicked or written by me.
+  current_path:
+    home: Home
+    signin: Sign in
+    signup: Sign up
+    settings: Settings
+    blog: Blog
+    category: Categories
+    searches: Search Page
+    policies: Policies
+  comments:
+    comment_control:
+      destroy: Delete
+      edit: Edit
+      reply: Reply
+      like: Like
+      unlike: Unlike
+  votes:
+    tooltip:
+      like: Like
+      unlike: Unlike
+    warning:
+      like: You already liked it.
+      unlike: You already unliked it.
+  searches:
+    label:
+      keywords: Keywords
+      category: Category
+    placeholder:
+      keywords: Keywords to search
+      category: Choose a category for advanced searching (Optional)
+    new: Go to Search
+    result_keywords_html: <strong class="keywords">%{keywords}</strong> %{total} results
+    result_keywords_category_html: <strong class="keywords">%{keywords}</strong> in <strong class="category">%{category}</strong> %{total} results
+  posts:
+    placeholder:
+      title: Title
+      slug: Type slug for this post url address
+      body: Body
+      tag: "Tags are separated by a comma (ex: Food,Review,Travel)"
+    postNum: "No.%{number}"
+    comments: Comments
+    views: Views
+    new: New Post
+    total_html: Total <strong class="total">%{total}</strong> Posts
+  categories:
+    new: New Category
+    total_html: Total <strong class="total">%{total}</strong> Categories
+    related_post_html: '<strong class="total">%{total}</strong> Posts about<strong class="title" style="margin-left: 5px">%{name}</strong>'
+    placeholder:
+      name: Type a category's name
+      select_category: Select a category
+  unauthorized:
+    posts:
+      index: You are unauthorized to access the entire post page.
+      new: You are unauthorized to write a post.
+      create: You are unauthorized to write a post.
+      show: You are unauthorized to read this post.
+      edit: You are unauthorized to edit this post.
+      update: You are unauthorized to edit this post.
+      destroy: You are unauthorized to delete this post.
+    categories:
+      index: You are unauthorized to access the entire categories.
+      new: You are unauthorized to write a category
+      create:  You are unauthorized to create a category.
+      show: You are unauthorized to read this category.
+      edit: You are unauthorized to edit this category.
+      update: You are unauthorized to edit this category.
+      destroy: You are unauthorized to delete this category.
+    policies:
+      new: You are unauthorized to write a policy.
+      create: You are unauthorized to write a policy.
+      edit: You are unauthorized to edit a policy.
+      update: You are unauthorized to edit a policy.
+      destroy: You are unauthorized to delete a policy.
+  default:
+    list: List
+    save: Save
+    reask: Are you sure?
+    back: Back
+    edit: Edit
+    destroy: Delete
+    search: Search
+    cancel: Cancel
+  auth_system:
+    login_suggestion: What's on your mind?
+    signin: Sign In
+    confirmation: Didn't receive confirmation email?
+    forgot_password: Forgor your password?
+    unlock: Didn't receive unlock email?
+    cacncel_myaccount: Cancel My Account
+    send_reset_password_instruction: Send me reset password instructions
+    resend_confirmation_instruction: Send confirmation instructions
+    resend_unlock_instruction: Send unlock instructions
+    mailer:
+      header_html: To be a valued member of Seo Yoochan application, <strong>%{email}</strong> must be confirmed
+      confirmation_html: "You can confirm your account email through the link below:"
+      confirm_myaccount: Confrim My Account
+    settings:
+      title:
+        settings: Settings
+        profile: Profile
+        account_credentials: Account
+        cancel: Cancel
+        avatar_destroy: Remove Photo
+      label:
+        locale: Language
+      placeholder:
+        name: Display name(If none, firstname & lastname will be automatically used)
+        email: Email address
+        password: Leave blank if you don't want to change your password
+        current_password: Type your current password to confirm your changes
+        first_name: First name
+        last_name: Last name
+        website: 웹사이트,블로그,또는 카페
+        phone: 휴대폰번호
+        birthday: 생일
+        gender: 성별
+        job: 직업
+        description: 자기소개
+        address: 주소
+        facebook_account_url: Facebook 주소
+        twitter_account_url: Twitter 주소
+        linkedin_account_url: Linkedin 주소
+        googleplus_account_url: Google+ 주소
+        github_account_url: Github 주소
+    signup:
+      signup: Sign Up
+      placeholder:
+        first_name: First name
+        last_name: Last name
+        username: Username
+        email: Email
+        password: Password
+      gender:
+        female_html: <i class="fa fa-female"></i><span>Female</span>
+        male_html: <i class="fa fa-male"></i><span>Male</span>
+      agreement_instruction_html: By clicking the button below, you are agreeing with our <a href="/policies/2">Terms</a> and that you have read our <a href="/policies/1">Data Use Policy</a>, including our <a href="/policies/1">Cookie Use</a>.
+  pages:
+    home:
+      brief_about:
+        hello: "WELCOME"
+        p_html: "I am a Developer using Ruby on Rails, Javascript, jQuery, HTML & CSS, Ruby, and PHP.<br/>On this website you can find some useful tutorials, resources, workarounds, and articles handpicked or written by me."
+        avatar:
+          description_html: "1992. 01. 05(22 age)<br/>Cheongju, Korea<br/>Soccer,Movie,Programming"
+        sns:
+          twitter: Follow me if you want my news in quick
+          facebook: Needless to say, Like it for my news
+          google: You always goolge? Add me to the circle
+          youtube: Stay tune to my channel
+          github: See my recent project and get useful code
+  browser_title:
+    default: "Seo Yoochan"
+  menu:
+    top:
+      home: Home
+      about: About
+      work: Work
+      blog: Blog
+      account: Account
+      signin: Sign In
+      signup: Sign Up
+      signout: Sign Out
+  date:
+    year: Year
+    month: Month
+    day: Day
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    abbr_month_names:
+    -
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    day_names:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    formats:
+      default: ! '%Y-%m-%d'
+      long: ! '%B %d, %Y'
+      short: ! '%b %d'
+    month_names:
+    -
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 day
+        other: ! '%{count} days'
+      x_minutes:
+        one: 1 minute
+        other: ! '%{count} minutes'
+      x_months:
+        one: 1 month
+        other: ! '%{count} months'
+      x_seconds:
+        one: 1 second
+        other: ! '%{count} seconds'
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  errors:
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: must be accepted
+      blank: can't be blank
+      present: must be blank
+      confirmation: ! "doesn't match %{attribute}"
+      empty: can't be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      inclusion: is not included in the list
+      invalid: is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      odd: must be odd
+      record_invalid: ! 'Validation failed: %{errors}'
+      restrict_dependent_destroy:
+        one: "Cannot delete record because a dependent %{record} exists"
+        many: "Cannot delete record because dependent %{record} exist"
+      taken: has already been taken
+      too_long:
+        one: is too long (maximum is 1 character)
+        other: is too long (maximum is %{count} characters)
+      too_short:
+        one: is too short (minimum is 1 character)
+        other: is too short (minimum is %{count} characters)
+      wrong_length:
+        one: is the wrong length (should be 1 character)
+        other: is the wrong length (should be %{count} characters)
+      other_than: "must be other than %{count}"
+    template:
+      body: ! 'There were problems with the following fields:'
+      header:
+        one: 1 error prohibited this %{model} from being saved
+        other: ! '%{count} errors prohibited this %{model} from being saved'
+  helpers:
+    select:
+      prompt: Please select
+    submit:
+      create: Create %{model}
+      submit: Save %{model}
+      update: Update %{model}
+  number:
+    currency:
+      format:
+        delimiter: ! ','
+        format: ! '%u%n'
+        precision: 2
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: $
+    format:
+      delimiter: ! ','
+      precision: 3
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ', and '
+      two_words_connector: ! ' and '
+      words_connector: ! ', '
+  time:
+    am: am
+    formats:
+      default: ! '%a, %d %b %Y %H:%M:%S %z'
+      long: ! '%B %d, %Y %H:%M'
+      short: ! '%d %b %H:%M'
+    pm: pm
+  i18n:
+    transliterate:
+      rule:
+        가: 가
+        나: 나
+        다: 다
+        라: 라
+        마: 마
+        바: 바
+        사: 사
+        아: 아
+        자: 자
+        카: 카
+        타: 타
+        파: 파
+        하: 하
+        그: 그
+        느: 드
+        르: 르
+        므: 므
+        브: 스
+        으: 으
+        즈: 즈
+        츠: 츠
+        크: 크
+        트: 트
+        프: 프
+        흐: 흐
+        신: 신
+        품: 품

@@ -1,0 +1,10 @@
+<% if devise_mapping.omniauthable? %>
+    <div class="sns_connector">
+      <ul>
+          <li class="twitter"><%= link_to '<i class="fa fa-twitter"></i>Twitter'.html_safe, user_omniauth_authorize_path(:twitter) %></li>
+          <li class="facebook"><%= link_to '<i class="fa fa-facebook"></i>Facebook'.html_safe, user_omniauth_authorize_path(:facebook) %></li>
+          <li class="linkedin"><%= link_to '<i class="fa fa-linkedin-square"></i>LinkedIn'.html_safe, user_omniauth_authorize_path(:linkedin) %></li>
+          <li class="google"><%= link_to '<i class="fa fa-google-plus"></i>Google'.html_safe, user_omniauth_authorize_path(:google_oauth2) %></li>
+      </ul>
+    </div>
+<% end %>

@@ -1,0 +1,61 @@
+# Additional translations at http://github.com/plataformatec/devise/wiki/I18n
+
+ko:
+  errors:
+    messages:
+      expired: "만료되었습니다. 다시 시도해주세요."
+      not_found: "찾을 수 없습니다."
+      already_confirmed: "이미 확인되었습니다, 다시 로그인해주세요."
+      not_locked: "계정이 잠김 상태가 아닙니다."
+      not_saved:
+        one: "%{resource}가 1개의 에러로 저장에 실패했습니다."
+        other: "%{resource}가 %{count}개의 에러로 저장에 실패했습니다."
+  devise:
+    failure:
+      user:
+        already_authenticated: '이미 로그인 하셨습니다.'
+        unauthenticated: '계속하시려면 로그인하시거나 회원가입을 하셔야 합니다.'
+        unconfirmed: '계속하기 전에 이메일 인증절차를 완료하셔야 합니다.'
+        locked: '귀하의 계정은 잠김상태입니다.'
+        last_attempt: '계정이 곧 잠길 예정입니다, 신중히 생각하여 마지막 시도를 해주십시요.'
+        not_found_in_database: '존재하지 않는 계정입니다.'
+        invalid: '계정 혹은 암호가 틀립니다.'
+        invalid_token: '인증 토큰 오류입니다. 새로운 토큰을 발급받으세요.'
+        timeout: '회원님의 로그인 세션이 종료되었습니다. 계속하시려면 다시 로그인하십시요.'
+        inactive: '회원님의 계정은 아직 활성화된 상태가 아닙니다.'
+    sessions:
+      signed_in: '오늘도 환영합니다, 어서오세요!'
+      signed_out: '로그아웃 되었습니다.'
+    passwords:
+      send_instructions: '잠시후에 비밀번호를 재설정하는 방법에 대한 안내문이 이메일로 발송됩니다. 등록된 이메일을 확인하시기 바랍니다.'
+      updated: '성공적으로 비밀번호가 변경되었습니다.'
+      send_paranoid_instructions: "귀하의 이메일이 등록되어 있다면 암호복원을 위한 링크가 이메일로 발송될 것입니다. 이메일을 확인하십시요."
+      updated_not_active: "Your password was changed successfully, but not in active."
+    confirmations:
+      send_instructions: '몇 분 내에 계정확인에 대한 설명을 이메일로 보내드릴것입니다. 확인해주세요.'
+      send_paranoid_instructions: 'If your e-mail exists on our database, you will receive an email with instructions about how to confirm your account in a few minutes.'
+      user:
+        confirmed: '감사합니다! 회원님의 계정확인 절차가 완료되었습니다.'
+    registrations:
+      signed_up: '서유찬 어플리케이션에 회원이 되신것을 진심으로 환영합니다!'
+      inactive_signed_up: '이미 서유찬 앱을 사용하고 계시지만 %{reason} 이유로 로그인할 수 없습니다.'
+      updated: '회원님의 개인정보가 변경되었습니다.'
+      destroyed: '회원님의 계정이 성공적으로 삭제되었습니다. 조만간 다시 뵙기를 바랍니다.'
+      roles: "권한설정"
+      user:
+        update_needs_confirmation: "이메일주소 변경이 신청되었습니다. 이메일 본인소유 확인을 위해, 새로운 이메일주소로 보내드린 링크를 클릭하여 확인해주세요."
+        signed_up_but_unconfirmed: "회원가입이 완료되었습니다. 이메일 본인소유 확인을 위해, 입력하신 이메일주소 '%{email}'에 보내드린 링크를 클릭하여 확인해주세요."
+    unlocks:
+      send_instructions: '계정 잠금해제 이메일이 몇분내로 도착할것입니다. 이메일을 확인해주세요.'
+      unlocked: '계정이 잠금 해제되어 자동로그인 되었습니다.'
+      send_paranoid_instructions: 'If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.'
+    omniauth_callbacks:
+      success: '%{kind} 계정이 인증되었습니다.'
+      failure: '"%{reason}" 한 이유로 %{kind} 계정 인증에 실패했습니다.'
+    mailer:
+      confirmation_instructions:
+        subject: '[서유찬] 가입 이메일 인증 안내'
+      reset_password_instructions:
+        subject: '[서유찬] 암호 재설정 안내'
+      unlock_instructions:
+        subject: '[서유찬] 계정 잠금해제 안내'

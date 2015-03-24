@@ -1,0 +1,23 @@
+<div id="category_show" class="content_wrapper">
+  <div class="row">
+    <section class="header clearfix">
+      <div class="title_container"><%= t("categories.related_post_html", name: "#{@category.name}",total: "#{@category.posts.size}") %></div>
+      <div class="control">
+        <ul>
+          <li><%= link_to t("categories.new"), new_category_path, class: "button info radius tiny" if can? :new, @category %></li>
+          <li><%= link_to t("default.edit"), edit_category_path(@category), class: "btn_edit button info tiny radius" if can? :edit, @category %></li>
+          <li><%= link_to t("default.list"), categories_path, class: "button secondary tiny radius" if can? :index, @category %></li>
+          <li><%= link_to t("default.back"), :back, class: "button secondary radius tiny" %></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="footer">
+      <ul>
+        <% @category.posts.each do |post| %>
+           <li class="clearfix"><%= link_to "<span class='title'>• #{HTMLEntities.new.decode(summarize(post.title, 85))}</span><span class='date'><i class=\"fa fa-clock-o\"></i>#{post.created_at.strftime("%Y.%m.%d at %I:%M%P")}</span>".html_safe, post, class: "ease" %></li>
+        <% end %>
+      </ul>
+    </section>
+  </div>
+</div>

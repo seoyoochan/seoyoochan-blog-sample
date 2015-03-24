@@ -1,0 +1,33 @@
+#search_show, #search_new {
+  margin-bottom: 50px;
+  border-top: 5px solid #55ACEE;
+
+}
+#search_show {
+  .header {
+    .title_container {
+      .title {
+        font-size: 1.2em;
+      }
+    }
+  }
+  .footer {
+    ul li {
+      font-size: 13px;
+    }
+  }
+}
+#search_new {
+  label {
+    margin-bottom: 10px;
+  }
+  .keywords {
+
+  }
+  .category {
+    color: #999 !important;
+  }
+  .button {
+    width: 100%;
+  }
+}

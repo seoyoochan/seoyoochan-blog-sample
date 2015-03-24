@@ -1,0 +1,23 @@
+<% unless flash.blank? %>
+    <div id="flash">
+      <% flash.each do |type, message| %>
+          <div class="alert-box <%= custom_flash(type) %> radius">
+            <p><%= message %></p>
+      <% end %>
+      </div>
+    </div>
+<% end %>
+
+<% if resource.present? %>
+    <% if resource.errors.present? %>
+        <div id="flash">
+          <div class="alert-box alert radius">
+            <ul>
+              <% resource.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+    <% end %>
+<% end %>

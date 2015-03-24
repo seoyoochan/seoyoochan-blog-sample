@@ -1,0 +1,9 @@
+<div id="comment_form_container" class="clearfix">
+    <%= simple_form_for(comment_obj_helper, url: comment_url_helper(comment_arg_helper), remote: true, method: comment_method_helper) do |f| %>
+      <%= f.hidden_field :parent_id %>
+      <%= f.input :commentable_id, :as => :hidden, :value => comment_obj_helper.commentable_id %>
+      <%= f.input :commentable_type, :as => :hidden, :value => comment_obj_helper.commentable_type %>
+      <%= f.input :body, required: true, label: false, wrapper: false, input_html: { class: "content radius input_shadow autosize" } %>
+      <%= f.submit t("default.save"), class: "submit button radius success tiny right" %>
+    <% end %>
+</div>

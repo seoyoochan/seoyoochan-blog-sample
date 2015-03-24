@@ -1,0 +1,9 @@
+<%= simple_form_for(@policy) do |f| %>
+    <%= f.input :type, input_html: { class: "input_shadow radius" }, autofocus: true, required: true, wrapper: false, label: false, placeholder: "정책종류" %>
+    <%= f.input :body_en, input_html: { class: "input_shadow radius" }, autofocus: false, required: false, wrapper: false, label: false, placeholder: "영어 정책 내용" %>
+    <br/>
+    <%= f.input :body_ko, input_html: { class: "input_shadow radius" }, autofocus: false, required: false, wrapper: false, label: false, placeholder: "한국어 정책 내용" %>
+    <br/>
+    <%= f.input :version, input_html: { class: "title input_shadow radius" }, autofocus: false, required: true, wrapper: false, label: false, placeholder: "몇번째 버전입니까?" %>
+    <%= f.submit t("default.save"), class: "submit button info radius small" %>
+<% end %>

@@ -1,0 +1,14 @@
+var form = $('<%= j render("form") %>').fadeIn();
+$('#comment_form_container').replaceWith(form);
+$('#comment_form_container .content').val('@<%= namer(@comment.parent_id) %> ');
+$('#comment_form_container .content').focus();
+var cancel = $('<div class="cancel"><%= link_to t("default.cancel"), "#", class: "button radius tiny alert right", style: "margin-right: 10px;" %></div>');
+$('#comment_form_container .submit').after(cancel);
+
+$('#comment_form_container .cancel').click(function(evt){
+    evt.preventDefault();
+    $(this).remove();
+    $('#comment_form_container').replaceWith($('<%= j render("form") %>').fadeIn());
+});
+
+

@@ -1,0 +1,14 @@
+<div id="confirmations" class="content_wrapper">
+  <div class="row">
+    <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+
+        <div class="email_container">
+          <%= f.input :email, placeholder: t("auth_system.signup.placeholder.email"), required: true, label: false, wrapper: false, input_html: { class: "email radius input_shadow" }, error: false  %>
+        </div>
+
+        <div><%= f.submit t("auth_system.resend_confirmation_instruction"), class: "button success radius submit" %></div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

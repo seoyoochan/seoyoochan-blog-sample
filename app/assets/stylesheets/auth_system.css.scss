@@ -1,0 +1,204 @@
+/* Default
+----------------------------------------------------------------------------*/
+#auth_system_shared_links {
+  border-top: 1px solid #eee;
+  margin-top: 30px;
+  padding-top: 40px;
+  text-align: center;
+
+  a {
+    font-size: 14px;
+    color: #555;
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+.login_suggestion {
+  .top {
+    text-align: center;
+    .title { font-size: 1.5em; font-weight: 900; color: #555; }
+    a { display: inline-block; width: 200px; margin-right: 20px; }
+  }
+}
+.sns_connector {
+  width: 530px;
+  margin: 50px auto 0 auto;
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 0 10px 20px 0;
+      padding: 0;
+      list-style: none;
+      display: inline-block;
+      font-size: 16px;
+      color: #fff;
+      width: 120px;
+
+      a {
+        position: relative;
+        display: inline-block;
+        margin: 0;
+        padding: 12px 0 0 0;
+        text-align: center;
+        width: 100%;
+        height: 50px;
+        color: #fff;
+        border-radius: 3px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        i { position: relative; top: 2px; margin-right: 10px; font-size: 20px; }
+      }
+
+    }
+    li:last-child {
+      margin-right: 0;
+    }
+    li.twitter a { background: #00aced; border: 1px solid #0084B4; }
+    li.facebook a { background: #44619d; border: 1px solid #425c98; }
+    li.linkedin a { background: #0174B2; border: 1px solid #006BAC; }
+    li.github a { background: #555; border: 1px solid #333; }
+    li.google a { background: #db4c3f; border: 1px solid #c94336; }
+  }
+}
+.gender_container {
+  text-align: center;
+  .collection_radio_buttons {
+    span { color: #999; }
+  }
+  .fa-female {
+    color: #E25462;
+    margin-right: 10px;
+  }
+  .fa-male {
+    color: #2D65E6;
+    margin-right: 10px;
+  }
+}
+/* Sign In
+----------------------------------------------------------------------------*/
+#sign_in {
+}
+/* Sign Up
+----------------------------------------------------------------------------*/
+#sign_up {
+
+  .birthday_container, .gender_container {
+    display: inline-block;
+    width: 50%;
+  }
+  #user_birthday_1i, #user_birthday_2i, #user_birthday_3i {
+    width: 70px;
+    display: inline-block;
+  }
+  .submit {
+    width: 100%;
+    color: #fff;
+  }
+  .agreement_container {
+    p {
+      text-align: center;
+      font-size: 11px;
+      color: #999;
+    }
+  }
+}
+
+@media (max-width: 970px) {
+  #sign_up {
+    #user_birthday_1i, #user_birthday_2i, #user_birthday_3i {
+      width: 70px !important;
+    }
+  }
+}
+@media (max-width: 568px) {
+  #sign_up {
+    .birthday_container {
+      width: 100% !important;
+    }
+    #user_birthday_1i, #user_birthday_2i, #user_birthday_3i {
+    }
+  }
+}
+@media (max-width: 530px) {
+  .sns_connector {
+    width: 100% !important;
+    ul li {
+      margin-right: 0 !important;
+      display: block !important;
+      width: 100% !important;
+    }
+  }
+}
+/* Settings
+----------------------------------------------------------------------------*/
+#settings {
+  .avatar_container {
+    width: 200px;
+    text-align: center;
+    margin: 10px auto 0px auto;
+    padding: 20px;
+
+    .center {
+      margin: 0 auto;
+      text-align: left;
+      width: 200px;
+      font-size: 12px;
+      .avatar_wrapper {
+        position: relative;
+        display: block;
+        padding-left: 35px;
+        margin-bottom: 20px;
+
+        .avatar {
+          width: 80px;
+          height: 80px;
+        }
+      }
+      .avatar_form {
+        text-align: left;
+        .user_remove_avatar {
+          padding-left: 25px;
+          .destroy { margin-right: 10px; }
+        }
+        .submit {
+          position: relative;
+          padding: 10px 10px;
+          width: 70px;
+          left: 50px !important;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .settings_form {
+
+    .gender_container {
+      margin-top: 15px;
+    }
+    .submit {
+      width: 100%;
+    }
+  }
+
+  .cancel_container {
+    position: relative;
+    text-align: center;
+    .cancel_button {
+      background-color: #FF504D;
+    }
+    .cancel_button:hover {
+      background-color: #E84846;
+    }
+  }
+}
+#find_password, #confirmations, #sign_in, #sign_up, #settings, #unlock {
+  margin-bottom: 50px;
+  border-top: 5px solid #F47D49;
+  .submit {
+    width: 100%;
+  }
+}

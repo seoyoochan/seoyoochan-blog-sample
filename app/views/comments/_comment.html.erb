@@ -1,0 +1,29 @@
+<li class="comment id_<%= comment.id %> clearfix">
+    <div class="avatar_container">
+      <%= image_tag "#{comment.user.avatar.default_url}", size: "40x40", class: "profile_image avatar" if !comment.user.sns_avatar? && comment.user.avatar.blank? %>
+      <%= image_tag "#{comment.user.sns_avatar}", class: "profile_image avatar" if comment.user.sns_avatar? && comment.user.avatar.blank? %>
+      <%= image_tag "#{comment.user.avatar.medium_avatar.url}", class: "profile_image avatar" if comment.user.avatar.present? %>
+    </div>
+    <div class="contents_container">
+      <div class="contents_wrapper">
+        <div class="clearfix">
+        <div class="left">
+          <h4 class="author"><%= name_mapper(comment.user) %><% if comment.vote_count > 0 %><strong class="vote_count">+<%= comment.vote_count %></strong><% end %></h4>
+          <span class="time"><%= comment.updated_at.strftime("%Y.%m.%d %I:%M%P") %></span>
+        </div>
+        <div class="right">
+          <ul class="control">
+            <% if signed_in? %>
+                <% if (can? :destroy, comment)%><li class="destroy"><%= link_to t("comments.comment_control.destroy"), comment_destroy_post_path(comment), method: :delete, data: { confirm: t("default.reask") }, remote: true %></li><% end %>
+                <% if (can? :edit, comment)%><li class="edit"><%= link_to t("comments.comment_control.edit"), comment_edit_post_path(comment), remote: true %></li><% end %>
+                <li class="reply"><%= link_to t("comments.comment_control.reply"), new_comment_path(comment), remote: true %></li>
+                <% if current_user.voted_on?(comment) %><li class="vote"><%= link_to t("comments.comment_control.unlike"), comment_unlike_post_path(comment), method: :post, remote: true %></li><% end %>
+                <% unless current_user.voted_on?(comment) %><li class="vote"><%= link_to t("comments.comment_control.like"), comment_like_post_path(comment), method: :post, remote: true %></li><% end %>
+            <% end %>
+          </ul>
+        </div>
+        </div>
+        <p class="body"><%= comment.body %></p>
+      </div>
+    </div>
+</li>

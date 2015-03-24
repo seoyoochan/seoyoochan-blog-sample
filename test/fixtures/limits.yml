@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  limitable_id: 1
+  limitable_type: MyString
+
+two:
+  user_id: 
+  limitable_id: 1
+  limitable_type: MyString

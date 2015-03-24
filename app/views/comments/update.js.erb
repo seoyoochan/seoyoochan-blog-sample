@@ -1,0 +1,6 @@
+var content = '<%= params["comment"]["body"] %>';
+
+$('.comment.id_<%= @comment.id %> .contents_wrapper').css('display', 'block');
+$('.comment.id_<%= @comment.id %> #comment_form_container').fadeOut(300, function(){ $(this).remove(); });
+$('.comment.id_<%= @comment.id %> .cancel').fadeOut(300, function(){ $(this).remove(); });
+$('.comment.id_<%= @comment.id %> .contents_wrapper .body').html(content);

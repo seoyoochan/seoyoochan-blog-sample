@@ -1,0 +1,8 @@
+var response = $('<%= j render @comment %>').fadeIn();
+<% if params["comment"]["parent_id"].present? %>
+$('#comment_list_container ul li:first').before(response);
+$('#comment_body').val('');
+<% else %>
+$('#comment_list_container ul li:first').before(response);
+$('#comment_body').val('');
+<% end %>

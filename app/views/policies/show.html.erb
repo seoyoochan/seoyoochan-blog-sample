@@ -1,0 +1,11 @@
+<div id="policy_show" class="content_wrapper">
+  <div class="row">
+    <h1 class="type"><%= @policy.type.humanize %></h1>
+    <%= @policy.body_en.html_safe if I18n.locale == :en %>
+    <%= @policy.body_ko.html_safe if I18n.locale == :ko %>
+
+    <div class="span right">
+        version: <%= @policy.version %>
+    </div>
+  </div>
+</div>

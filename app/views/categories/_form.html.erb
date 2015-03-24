@@ -1,0 +1,11 @@
+<%= simple_form_for(@category, html: { class: "category_form" } ) do |f| %>
+    <div class="name_container">
+      <%= f.input :name, input_html: { class: "name input_shadow radius" }, autofocus: true, required: true, wrapper: false, label: false, placeholder: t("categories.placeholder.name")  %>
+    </div>
+
+    <div>
+      <%= f.submit t("default.save"), class: "submit button info tiny radius" %>
+    </div>
+<% end %>
+
+<%= link_to t("default.list"), categories_path, class: "button secondary tiny radius right" %>

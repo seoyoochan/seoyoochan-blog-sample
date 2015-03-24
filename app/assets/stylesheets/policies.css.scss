@@ -1,0 +1,41 @@
+#policy_show, #policy_index {
+  margin-bottom: 50px;
+  border-top: 5px solid #2DB400;
+}
+
+#policy_show {
+  .type {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+  p {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+
+  h2,h3 {
+    font-size: 1.8em;
+    font-weight: 900;
+    color: #444;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+
+  ol,ul{
+    padding-left: 30px;
+    li {
+      line-height: 2em;
+    }
+  }
+  ol li {
+      list-style-type: decimal;
+  }
+  ul li {
+    list-style-type: circle;
+    line-height: 2em;
+  }
+
+}

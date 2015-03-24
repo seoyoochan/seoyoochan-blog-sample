@@ -1,0 +1,18 @@
+<div class="login_suggestion">
+  <div class="top">
+    <h3 class="title"><%= t("auth_system.login_suggestion") %></h3>
+    <%- if controller_name != 'sessions' %>
+        <%= link_to t("auth_system.signin"), new_session_path(resource_name), class: "small success radius button" %>
+    <% end -%>
+
+    <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+        <%= link_to t("auth_system.signup.signup"), new_registration_path(resource_name), class: "small info radius button" %>
+    <% end -%>
+  </div>
+
+  <p class="or">
+    <span>OR</span>
+  </p>
+
+  <%= render "devise/shared/sns_connector" %>
+</div>

@@ -1,0 +1,90 @@
+<div id="settings" class="content_wrapper">
+  <div class="row">
+    <div class="avatar_container">
+      <div class="center">
+        <picture class="avatar_wrapper">
+          <%= image_tag "#{current_user.avatar.default_url}", size: "42x42",class: "avatar" if !current_user.sns_avatar? && current_user.avatar.blank? %>
+          <%= image_tag "#{current_user.sns_avatar}", class: "avatar" if current_user.sns_avatar? && current_user.avatar.blank? %>
+          <%= image_tag "#{current_user.avatar.medium_avatar.url}", class: "avatar" if current_user.avatar.present? %>
+        </picture>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true, class: "avatar_form" }) do |f| %>
+            <%= f.file_field :avatar, wrapper: false, label: false %>
+            <%= f.input :remove_avatar, as: :boolean, label: t("auth_system.settings.title.avatar_destroy"), input_html: { checked: false, class: "destroy" } %>
+            <%= f.input :avatar_cache, as: :hidden %>
+            <%= f.submit t("default.save"), class: "submit button info radius", tabindex: 0, :"area-label" => "submit form" %>
+        <% end %>
+      </div>
+    </div>
+
+
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "settings_form" }) do |f| %>
+
+        <p class="section_title">
+          <span><%= t("auth_system.settings.title.profile") %></span>
+        </p>
+
+        <div class="name_container">
+          <%= f.input :name, placeholder: t("auth_system.settings.placeholder.name"), required: false, label: false, wrapper: false, input_html: { class: "name radius input_shadow" }, error: false %>
+        </div>
+
+        <div class="firstname_container">
+          <%= f.input :first_name, placeholder: t("auth_system.settings.placeholder.first_name"), required: true, label: false, wrapper: false, input_html: { class: "first_name radius input_shadow" }, error: false %>
+        </div>
+
+        <div class="lastname_container">
+          <%= f.input :last_name, placeholder: t("auth_system.settings.placeholder.last_name"), required: true, label: false, wrapper: false, input_html: { class: "last_name radius input_shadow" }, error: false %>
+        </div>
+
+
+        <div class="job_container">
+          <%= f.input :job, placeholder: t("auth_system.settings.placeholder.job"), required: false, label: false, wrapper: false, input_html: { class: "job radius input_shadow" }, error: false  %>
+        </div>
+
+        <div class="description_container">
+          <%= f.input :description, placeholder: t("auth_system.settings.placeholder.description"), required: false, label: false, wrapper: false, input_html: { class: "description radius ease input_shadow" }, error: false  %>
+        </div>
+
+        <div class="website_container">
+          <%= f.input :website, placeholder: t("auth_system.settings.placeholder.website"), required: false, label: false, wrapper: false, input_html: { class: "website radius input_shadow" }, error: false  %>
+        </div>
+
+        <div class="phone_container">
+          <%= f.input :phone, placeholder: t("auth_system.settings.placeholder.phone"), required: false, label: false, wrapper: false, input_html: { class: "phone radius input_shadow" }, error: false  %>
+        </div>
+
+        <div class="birthday_container">
+          <%= f.input :birthday, as: :date, wrapper: false, order: [:year, :month, :day], prompt: {year: t('date.year'), month: t('date.month'), day: t('date.day')},
+                      start_year: Date.current.year, end_year: 1920, use_month_names: t(:month_names, scope: :date),
+                      required: false, label: false, input_html: { class: "birthday radius" }, error: false  %>
+        </div>
+
+        <div class="gender_container">
+          <%= f.collection_radio_buttons :gender, [["female", t("auth_system.signup.gender.female_html") ], ["male", t("auth_system.signup.gender.male_html")]], :first, :last, wrapper: false %>
+        </div>
+
+        <p class="section_title">
+          <span><%= t("auth_system.settings.title.account_credentials") %></span>
+        </p>
+
+        <div class="email_container">
+          <%= f.input :email, placeholder: t("auth_system.settings.placeholder.email"), required: true, label: false, wrapper: false, input_html: { class: "email radius input_shadow" }, error: false  %>
+        </div>
+
+        <div class="password_container">
+          <%= f.input :password, autocomplete: "off", placeholder: t("auth_system.settings.placeholder.password"), required: false, label: false, wrapper: false, input_html: { class: "password radius input_shadow" }, error: false  %>
+        </div>
+
+        <div class="locale_container">
+          <%= f.input :locale, collection: @locales.map { |k,v| [v,k] }, selected: current_user.locale, label: false, wrapper: false, input_html: { class: "locale radius" } %>
+        </div>
+
+        <div><%= f.submit t("default.save"), class: "submit button info radius small", tabindex: 0, :"area-label" => "submit form" %></div>
+    <% end %>
+
+    <p class="section_title">
+      <span><%= t("auth_system.settings.title.cancel") %></span>
+    </p>
+
+    <div class="cancel_container"><%= button_to t("auth_system.cacncel_myaccount"), registration_path(resource_name), data: { confirm: t("default.reask") }, method: :delete, class: "cancel_button button alert radius tiny" %></div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<% if @comment.vote_count > 0 %>
+<% current_user.vote_for(@comment) %>
+$('.comment.id_<%= @comment.id %> .author .vote_count').replaceWith('<strong class="vote_count">+<%= @comment.vote_count %></strong>');
+<% end %>
+
+<% if @comment.vote_count == 0 %>
+<% current_user.vote_for(@comment) %>
+$('.comment.id_<%= @comment.id %> .author').append('<strong class="vote_count">+<%= @comment.vote_count %></strong>');
+<% end %>
+
+$('.comment.id_<%= @comment.id %> .control .vote').replaceWith('<li class="vote"><%= link_to t("comments.comment_control.unlike"), comment_unlike_post_path(@comment), method: :post, remote: true %></li>');

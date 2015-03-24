@@ -1,0 +1,22 @@
+<div id="search_show" class="content_wrapper">
+  <div class="row">
+    <div class="large-12 columns">
+      <section class="header clearfix">
+        <div class="title_container"><h3 class="title"><%= t("searches.result_keywords_html", keywords: "#{@search.keywords}", total: "#{@posts.size}") if @category.nil? && @posts %><%= t("searches.result_keywords_category_html", keywords: "#{@search.keywords}", total: "#{@posts.size}", category: "#{@category.name}") if @posts && @category %></h3></div>
+        <div class="control">
+          <ul>
+            <li><%= link_to t("searches.new"), new_search_path, class: "button info radius tiny" %></li>
+            <li><%= link_to t("default.back"), :back, class: "button secondary radius tiny" %></li>
+          </ul>
+        </div>
+      </section>
+      <section class="footer">
+        <ul>
+        <% @posts.each do |post| %>
+          <li><%= link_to "#{HTMLEntities.new.decode(summarize(post.title, 100))}", post %></li>
+        <% end %>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>

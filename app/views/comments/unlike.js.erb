@@ -1,0 +1,8 @@
+<% if @comment.vote_count > 1 %>
+<% current_user.unvote_for(@comment) %>
+$('.comment.id_<%= @comment.id %> .author .vote_count').replaceWith('<strong class="vote_count">+<%= @comment.vote_count %></strong>');
+<% else %>
+<% current_user.unvote_for(@comment) %>
+$('.comment.id_<%= @comment.id %> .author .vote_count').remove();
+<% end %>
+$('.comment.id_<%= @comment.id %> .control .vote').replaceWith('<li class="vote"><%= link_to t("comments.comment_control.like"), comment_like_post_path(@comment), method: :post, remote: true %></li>');

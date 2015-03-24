@@ -1,0 +1,46 @@
+<div class="menu_container">
+  <div class="menu-wrap">
+    <nav class="menu-top">
+      <div class="menu-top_wrapper">
+        <% if signed_in? %>
+        <div class="profile right">
+          <%= image_tag "#{current_user.avatar.default_url}", size: "80x80",class: "avatar" if !current_user.sns_avatar? && current_user.avatar.blank? %>
+          <%= image_tag "#{current_user.sns_avatar}", class: "avatar" if current_user.sns_avatar? && current_user.avatar.blank? %>
+          <%= image_tag "#{current_user.avatar.small_avatar.url}", class: "avatar" if current_user.avatar.present? %>
+        <span class="name"><%= name_mapper(current_user) %></span></div>
+        <div class="icon-list right">
+          <%= link_to "<i class=\"fa fa-fw fa-star-o\"></i>".html_safe, "#" if signed_in? %>
+          <%= link_to "<i class=\"fa fa-fw fa-bell-o\"></i>".html_safe, "#" if signed_in? %>
+          <%= link_to "<i class=\"fa fa-fw fa-comment-o\"></i>".html_safe, "#" if signed_in? %>
+          <%= link_to "<i class=\"fa fa-cog\"></i>".html_safe, settings_path if signed_in? %>
+        </div>
+        <% end %>
+      </div>
+    </nav>
+    <nav class="menu-side">
+      <ul>
+        <li>
+        <div class="search_container">
+          <div class="search_style-2">
+            <span class="icon"><i class="fa fa-search"></i></span>
+            <%= simple_form_for @search_object do |f| %>
+                <%= f.input :keywords, required: false, autofocus: false, placeholder: "Search...", label: false, wrapper: false, input_html: { class: "search_bar" } %>
+                <%= f.submit "", wrapper: false, class: "search_submit" %>
+            <% end %>
+          </div>
+        </div>
+        </li>
+        <li><%= link_to t("menu.top.about"), root_path %></li>
+        <li><%= link_to t("menu.top.work"), "#" %></li>
+        <li><%= link_to t("menu.top.blog"), blog_path %></li>
+        <% if signed_in? %>
+            <li><%= link_to t("menu.top.signout"), destroy_user_session_path, method: :delete %></li>
+        <% else %>
+            <li><%= link_to t("menu.top.signin"), user_session_path %></li>
+            <li><%= link_to t("menu.top.signup"), new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+  <button class="menu-button" id="open-button"><i class="fa fa-bars"></i></button>
+</div>

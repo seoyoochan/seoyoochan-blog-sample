@@ -1,0 +1,78 @@
+<div id="post_read" class="content_wrapper">
+  <div class="row">
+    <section class="header clearfix">
+      <div class="title_container"><%= t("posts.total_html", total: "#{Post.all.size}") %></div>
+      <div class="control">
+        <ul>
+          <li><%= link_to t("posts.new"), new_post_path, class: "button info radius tiny" if can? :new, @post %></li>
+          <li><%= link_to t("default.list"), blog_path, class: "button secondary radius tiny" %></li>
+          <li><%= link_to t("default.back"), :back, class: "radius button secondary tiny" %></li>
+        </ul>
+      </div>
+    </section>
+    <nav class="general_info">
+      <ul>
+        <li class="user">
+          <%= image_tag "#{@post.user.avatar.default_url}", size: "27x27", class: "profile_image avatar" if !@post.user.sns_avatar? && @post.user.avatar.blank? %>
+          <%= image_tag "#{@post.user.sns_avatar}", class: "profile_image avatar" if @post.user.sns_avatar? && @post.user.avatar.blank? %>
+          <%= image_tag "#{@post.user.avatar.medium_avatar.url}", class: "profile_image avatar" if @post.user.avatar.present? %>
+        </li>
+        <% if @post.category.present? %><li class="categories"><%= link_to "<i class=\"fa fa-folder\"></i>#{@post.category.name}".html_safe, @post.category %></li><% end %>
+        <li class="time"><i class="fa fa-clock-o"></i><%= @post.updated_at.strftime("%Y.%m.%d at %I:%M%P") %></li>
+        <li class="comment"><i class="fa fa-comment"></i><%= @post.comments.size %> <%= t("posts.comments") %></li>
+        <li class="views"><i class="fa fa-eye"></i><%= @post.views.count %> <%= t("posts.views") %></li>
+      </ul>
+    </nav>
+    <div class="divider"></div>
+    <div class="title">
+      <h3><%= HTMLEntities.new.decode(@post.title) %></h3>
+    </div>
+    <div class="divider"></div>
+    <div class="content">
+      <%= raw @post.body %>
+    </div>
+    <div class="bottom">
+      <nav class="post_control">
+        <ul>
+            <% if current_user == @post.user %>
+              <li><%= link_to "<i class=\"fa fa-pencil-square-o\"></i>".html_safe, edit_post_path(@post) if can? :edit, @post %></li>
+              <li><%= link_to "<i class=\"fa fa-times\"></i>".html_safe, @post, method: :delete, data: { confirm: t("default.reask") } if can? :destroy, @post %></li>
+            <% end %>
+          <li>
+            <% if signed_in? %>
+                <%= link_to "<i class=\"fa fa-heart-o\"></i> #{@post.vote_count}".html_safe, unlike_post_path(@post.id), method: :post, class: "unlike ease" if current_user.voted_on?(@post) %>
+                <%= link_to "<i class=\"fa fa-heart\"></i> #{@post.vote_count}".html_safe, like_post_path(@post.id), method: :post, class: "like ease" unless current_user.voted_on?(@post) %>
+            <% else %>
+                <%= link_to "<i class=\"fa fa-heart\"></i> #{@post.vote_count}".html_safe, new_user_session_path, class: "like ease"%>
+            <% end %>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="tag_container">
+      <ul>
+        <li><%= link_to "<i class='fa fa-tag'></i>".html_safe, "#", class: "tag_icon" %></li>
+        <% @post.tags.each do |item| %>
+            <li><%= link_to "#{item.name}".html_safe, "#", class: "tag_item" %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div id="social_button">
+      <%= render_shareable :turbolinks => true, :facebook => {:turbolinks => false} %>
+    </div>
+
+    <div class="comments_container">
+
+      <%= render "shared/login_suggestion" unless signed_in? %>
+      <%= render partial: "comments/form" if signed_in? %>
+
+      <div id="comment_list_container">
+        <ul>
+          <li></li>
+          <%= render partial: "comments/comment", collection: @comments.order("updated_at DESC") %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

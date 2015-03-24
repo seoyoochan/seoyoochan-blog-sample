@@ -1,0 +1,31 @@
+<div id="category_index" class="content_wrapper">
+  <div class="row">
+    <section class="header clearfix">
+      <div class="title_container"><%= t("categories.total_html", total: "#{@categories.size}") %></div>
+      <div class="control">
+        <ul>
+          <li><%= link_to t("categories.new"), new_category_path, class: "button info radius tiny"if can? :new, @category  %></li>
+          <li><%= link_to t("default.list"), categories_path, class: "button secondary tiny radius" if can? :index, @category %></li>
+          <li><%= link_to t("default.back"), :back, class: "button secondary radius tiny" %></li>
+        </ul>
+      </div>
+    </section>
+    <section class="footer">
+      <ul class="list">
+        <% @categories.each do |category| %>
+            <li>
+              <span class="title"><%= link_to "• #{category.name} <small>(#{category.posts.size})</small>".html_safe, category, class: "ease" %></span>
+              <% if can? :edit, Category %>
+              <div class="control">
+                <ul>
+                  <li><%= link_to t("default.edit"), edit_category_path(category), class: "button info radius tiny" if can? :edit, category %></li>
+                  <li><%= link_to t("default.destroy"), category, method: :delete, data: { confirm: t("default.reask") }, class: "button info radius tiny"  if can? :destroy, category %></li>
+                </ul>
+              </div>
+              <% end %>
+            </li>
+        <% end %>
+      </ul>
+    </section>
+  </div>
+</div>

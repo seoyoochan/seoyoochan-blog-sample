@@ -1,0 +1,83 @@
+#comment_list_container {
+  ul {
+    li {
+      width: 100%;
+      margin-bottom: 15px;
+      .avatar_container {
+        display: inline-block;
+        float: left;
+        margin-right: 15px;
+        width: 40px;
+        .avatar {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .contents_container {
+        display: inline-block;
+        width: 84%;
+        .cancel {
+          float: right;
+          font-size: 12px;
+          margin-right: 10px;
+        }
+        .contents_wrapper {
+          .author {
+            font-size: 12px;
+            display: inline;
+            font-weight: 600;
+            .vote_count {
+              margin-left: 5px;
+              color: rgba(0,180,218,1);
+              font-size: 11px;
+              font-weight: bold;
+              font-style: italic;
+            }
+          }
+          .time {
+            font-size: 10px;
+            display: inline;
+          }
+          .body {
+            font-size: 12px;
+            display: block;
+            margin-top: 5px;
+          }
+          .control {
+            font-size: 12px;
+            margin-left: 0 !important;
+            li {
+              display: inline;
+              margin-right: 5px;
+              a {
+                color: #777;
+              }
+              a:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#comment_form_container {
+  .content {
+    font-size: 12px;
+  }
+  .submit {
+    display: block;
+  }
+}
+
+@media (max-width: 500px) {
+  #comment_list_container {
+    .contents_wrapper {
+      .left, .right {
+        float: none !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale.to_s %>" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="<%= t("meta_tags.home.title") %>">
+    <meta name="Description" content="<%= t("meta_tags.home.description") %>>">
+    <meta name="Keywords" content="Ruby,Ruby on Rails,Javascript,jQuery,Tutorials,CSS,HTML,Tips,Workarounds,루비온레일스,자바스크립트,튜토리얼,Resources">
+    <title><%= content_for?(:title) ? yield(:title) : t("browser_title.default") %></title>
+    <%= csrf_meta_tags %>
+    <%= render "shared/social_meta_tags" %>
+    <link href='//fonts.googleapis.com/earlyaccess/nanumgothic.css' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag "application" %>
+    <script type="text/javascript">
+        (function($) {
+            $(document).ready(function() {
+                $("#flash").delay(5000).fadeOut(300);
+
+                var csrf_token = $('meta[name=csrf-token]').attr('content');
+                var csrf_param = $('meta[name=csrf-param]').attr('content');
+                var params;
+                if (csrf_param !== undefined && csrf_token !== undefined) {
+                    params = csrf_param + "=" + encodeURIComponent(csrf_token);
+                }
+                $('.redactor').redactor(
+                        { "imageUpload":"/redactor_rails/pictures?" + params,
+                            "imageGetJson":"/redactor_rails/pictures",
+                            "fileUpload":"/redactor_rails/documents?" + params,
+                            "fileGetJson":"/redactor_rails/documents",
+                            "path":"/assets/redactor-rails",
+                            "lang": "<%= I18n.locale.to_s %>",
+                            "css":""}
+                );
+            });
+        })(jQuery);
+    </script>
+    <style type="text/css">
+      <%= header_line %>
+    </style>
+  </head>
+  <body>
+  <%= render "shared/flash" %>
+  <%= render "layouts/header" %>
+  <div id="scrollTopTarget" class="content_menu_responder">
+    <% unless params["action"] == "home" %>
+    <div id="scrollTop">
+        <%= link_to "<i class=\"fa fa-arrow-up\"></i>".html_safe, "#scrollTopTarget", class: "ease" %>
+    </div>
+    <% end %>
+    <%= yield %>
+  </div>
+  <%= javascript_include_tag "application" %>
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-55121874-1', 'auto');
+      ga('require', 'displayfeatures');
+      ga('send', 'pageview');
+  </script>
+  </body>
+</html>

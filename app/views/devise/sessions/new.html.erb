@@ -1,0 +1,26 @@
+<div id="sign_in" class="content_wrapper">
+  <div class="row">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="email_container">
+            <%= f.input :email, placeholder: t("auth_system.signup.placeholder.email"), required: false, label: false, wrapper: false, input_html: { class: "email radius input_shadow" }, error: false  %>
+          </div>
+
+          <div class="password_container">
+            <%= f.input :password, autocomplete: "off", placeholder: t("auth_system.signup.placeholder.password"), required: false, label: false, wrapper: false, input_html: { class: "password radius input_shadow" }, error: false  %>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+          <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+          <% end -%>
+
+          <div><%= f.submit t("menu.top.signin"), class: "button success radius submit", data: { disable_with: "Please wait..." } %></div>
+    <% end %>
+
+    <p class="or">
+    <span>OR</span>
+    </p>
+
+    <%= render "devise/shared/sns_connector" %>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

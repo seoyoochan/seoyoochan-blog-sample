@@ -1,0 +1,15 @@
+<%= simple_form_for(@post, html: { class: "post_form" }) do |f| %>
+    <%= f.association :category, input_html: { class: "category input_shadow radius" }, label: false, required: false, wrapper: false, placeholder: t("categories.placeholder.select_category") %>
+    <%= f.input :title, input_html: { class: "title input_shadow radius" }, autofocus: true, required: true, wrapper: false, label: false, placeholder: t("posts.placeholder.title") %>
+    <%= f.input :slug, input_html: { class: "slug input_shadow radius" }, autofocus: false, required: true, wrapper: false, label: false, placeholder: t("posts.placeholder.slug") %>
+    <%= f.input :body, input_html: { class: "content input_shadow radius redactor" }, autofocus: false, required: true, wrapper: false, label: false, placeholder: t("posts.placeholder.body") %>
+    <%= f.input :tag_list, input_html: { class: "tags input_shadow radius" }, wrapper: false, label: false, placeholder: t("posts.placeholder.tag") %>
+
+    <button data-dropdown="limitDrop" aria-controls="limitDrop" aria-expanded="false">Public</button>
+    <div id="limitDrop" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+      <%= f.association :limits, collection: Limit.limits_group, as: :check_boxes, input_html: { class: "radius" }, wrapper: false, label: false %>
+    </div>
+    <%= f.submit t("default.save"), class: "submit button info radius small" %>
+<% end %>
+
+<%= link_to t("default.back"), @post, class: "button secondary tiny radius right back" %>

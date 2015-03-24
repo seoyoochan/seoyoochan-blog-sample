@@ -1,0 +1,375 @@
+ko:
+  meta_tags:
+    home:
+      title: 서유찬
+      description: Ruby on Rails, Javascript, jQuery, HTML & CSS, Ruby, PHP를 쓰는 개발자입니다. 제가 직접 선별하거나 작성한 유용한 튜토리얼, 자료, 노하우, 기사들을 이곳에서 만나실 수 있습니다.
+  current_path:
+    home: 홈
+    signin: 로그인
+    signup: 회원가입
+    settings: 환경설정
+    blog: 블로그
+    category: 카테고리
+    searches: 검색페이지
+    policies: 정책
+  comments:
+    comment_control:
+      destroy: 삭제
+      edit: 편집
+      reply: 답글
+      like: 좋아요
+      unlike: 좋아요 취소
+  votes:
+    tooltip:
+      like: 좋아요
+      unlike: 좋아요 취소
+    warning:
+      like: 이미 좋아합니다.
+      unlike: 이미 마음에 들지 않습니다.
+  searches:
+    label:
+      keywords: 키워드
+      category: 카테고리
+    placeholder:
+      keywords: 검색할 키워드
+      category: 어떤 카테고리내에서 검색하시겠습니까?
+    new: 검색창으로
+    result_keywords_html: <strong class="keywords">%{keywords}</strong> 검색결과 <strong class="total">%{total}</strong> 건
+    result_keywords_category_html: <strong class="category">%{category}</strong>내의 <strong class="keywords">%{keywords}</strong> 검색결과 <strong class="total">%{total}</strong> 건
+  posts:
+    placeholder:
+      title: 제목을 입력해주세요
+      slug: 게시물 URL 주소를 위해 슬러그를 입력해주세요
+      body: 내용을 입력해주세요
+      tag: "태그는 쉼표로 구분해주세요. (예: 맛집,리뷰,여행)"
+    postNum: "%{number}번째 글"
+    comments: 개의 댓글
+    views: 명이 읽음
+    new: 글쓰기
+    total_html: 총 <strong class="total">%{total}</strong>개의 글
+  categories:
+    new: 새 카테고리
+    total_html: 총 <strong class="total">%{total}</strong>개의 카테고리
+    related_post_html: <strong class="title">%{name}</strong>에 관련된 글이 <strong class="total">%{total}</strong>개 있습니다.
+    placeholder:
+      name: 카테고리명을 입력해주세요
+      select_category: 카테고리를 선택해주세요
+  unauthorized:
+    posts:
+      index: 전체 포스트 페이지에 접근할 권한이 없습니다.
+      new: 포스트를 작성할 권한이 없습니다.
+      create: 포스트를 작성할 권한이 없습니다.
+      show: 포스트를 읽을 권한이 없습니다.
+      edit: 포스트를 편집 할 수 있는 권한이 없습니다.
+      update: 포스트를 편집 할 수 있는 권한이 없습니다.
+      destroy: 포스트를 삭제 할 수 있는 권한이 없습니다.
+    categories:
+      index: 카테고리 목록을 볼 수 없습니다.
+      new: 카테고리를 작성할 권한이 없습니다.
+      create: 카테고리를 작성할 권한이 없습니다.
+      show: 카테고리를 읽을 권한이 없습니다.
+      edit: 카테고리를 편집 할 수 있는 권한이 없습니다.
+      update: 카테고리를 편집 할 수 있는 권한이 없습니다.
+      destroy: 카테고리를 삭제 할 수 있는 권한이 없습니다.
+    policies:
+      new: 정책을 작성할 권한이 없습니다.
+      create: 정책을 작성할 권한이 없습니다.
+      edit: 정책을 수정할 권한이 없습니다.
+      update: 정책을 수정할 권한이 없습니다.
+      destroy: 정책을 삭제할 권한이 없습니다.
+  default:
+    list: 목록
+    save: 저장
+    reask: 확실한가요?
+    back: 뒤로
+    edit: 수정
+    destroy: 삭제
+    search: 검색
+    cancel: 취소
+  auth_system:
+    login_suggestion: 어떻게 생각하세요?
+    signin: 로그인
+    confirmation: 이메일주소 인증하기
+    forgot_password: 비밀번호찾기
+    unlock: 계정 잠금해제 인증하기
+    cacncel_myaccount: 탈퇴 하겠습니다
+    send_reset_password_instruction: 비밀번호 초기화 요청
+    resend_confirmation_instruction: 이메일인증 요청
+    resend_unlock_instruction: 계정해제 요청
+    mailer:
+      header_html: 서유찬 어플리케이션 회원이 되기위한 <strong>%{email}</strong> 계정 인증 안내메일 입니다.
+      confirmation_html: 아래의 링크를 클릭하시면 계정인증 절차가 완료됩니다.
+      confirm_myaccount: 계정 인증 완료
+    settings:
+      title:
+        settings: 환경설정
+        profile: 프로필
+        account_credentials: 계정 정보
+        cancel: 탈퇴
+        avatar_destroy: 사진 삭제
+      label:
+        locale: 언어설정
+      placeholder:
+        name: 보여줄 사용자이름(없을경우 성,이름으로 조합함)
+        email: 이메일주소
+        password: 비밀번호 변경을 원치않으시면 빈칸으로 두세요
+        current_password: 본인의 계정이 맞다면 현재 비밀번호를 입력해주세요
+        first_name: 이름
+        last_name: 성
+        website: 웹사이트,블로그,또는 카페
+        phone: 휴대폰번호
+        birthday: 생일
+        gender: 성별
+        job: 직업
+        description: 자기소개
+        address: 주소
+        facebook_account_url: Facebook 주소
+        twitter_account_url: Twitter 주소
+        linkedin_account_url: Linkedin 주소
+        googleplus_account_url: Google+ 주소
+        github_account_url: Github 주소
+    signup:
+      signup: 회원가입
+      placeholder:
+        first_name: 이름
+        last_name: 성
+        username: 아이디
+        email: 이메일주소
+        password: 비밀번호
+      gender:
+        female_html: <i class="fa fa-female"></i><span>여자</span>
+        male_html: <i class="fa fa-male"></i><span>남자</span>
+      agreement_instruction_html: 아래 버튼을 클릭시 <a href="/policies/2">서비스이용약관</a>과 <a href="/policies/1">데이터이용정책</a>, 및 <a href="/policies/1">쿠키사용</a>에 대해 읽고 동의한것으로 간주합니다.
+  pages:
+    home:
+      brief_about:
+        hello: "WELCOME"
+        p_html: "Ruby on Rails, Javascript, jQuery, HTML & CSS, Ruby, PHP를 쓰는 개발자입니다.<br/>제가 직접 선별하거나 작성한 유용한 튜토리얼, 자료, 노하우, 기사들을 이곳에서 만나실 수 있습니다."
+        avatar:
+          description_html: "1992. 01. 05(23세)<br/>청주, 대한민국<br/>축구,영화감상,프로그래밍"
+        sns:
+          twitter: 빠르고 간단한게 소식을 받으세요! 팔로우 미
+          facebook: 말할필요가 있나? 구독하려면 좋아요 꾹
+          google: 구글링 모두 하죠? 서클에 추가하기
+          youtube: 강의가 마음에 든다면 채널도 고정하기
+          github: 제 최근 프로젝트도 살피고 맘에들면 포크하세요
+  browser_title:
+    default: "서유찬"
+  menu:
+    top:
+      home: 홈
+      about: 소개
+      work: 작품
+      blog: 블로그
+      account: 계정
+      signin: 로그인
+      signup: 회원가입
+      signout: 로그아웃
+  date:
+    year: "연도"
+    month: "월"
+    day: "일"
+    abbr_day_names:
+    - 일
+    - 월
+    - 화
+    - 수
+    - 목
+    - 금
+    - 토
+    abbr_month_names:
+    -
+    - 1월
+    - 2월
+    - 3월
+    - 4월
+    - 5월
+    - 6월
+    - 7월
+    - 8월
+    - 9월
+    - 10월
+    - 11월
+    - 12월
+    day_names:
+    - 일요일
+    - 월요일
+    - 화요일
+    - 수요일
+    - 목요일
+    - 금요일
+    - 토요일
+    formats:
+      default: ! '%Y/%m/%d'
+      long: ! '%Y년 %m월 %d일 (%a)'
+      short: ! '%m/%d'
+    month_names:
+    -
+    - 1월
+    - 2월
+    - 3월
+    - 4월
+    - 5월
+    - 6월
+    - 7월
+    - 8월
+    - 9월
+    - 10월
+    - 11월
+    - 12월
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 약 한 시간
+        other: 약 %{count}시간
+      about_x_months:
+        one: 약 한 달
+        other: 약 %{count}달
+      about_x_years:
+        one: 약 일 년
+        other: 약 %{count}년
+      almost_x_years:
+        one: 일 년 이하
+        other: ! '%{count}년 이하'
+      half_a_minute: 30초
+      less_than_x_minutes:
+        one: 일 분 이하
+        other: ! '%{count}분 이하'
+      less_than_x_seconds:
+        one: 일 초 이하
+        other: ! '%{count}초 이하'
+      over_x_years:
+        one: 일 년 이상
+        other: ! '%{count}년 이상'
+      x_days:
+        one: 하루
+        other: ! '%{count}일'
+      x_minutes:
+        one: 일 분
+        other: ! '%{count}분'
+      x_months:
+        one: 한 달
+        other: ! '%{count}달'
+      x_seconds:
+        one: 일 초
+        other: ! '%{count}초'
+    prompts:
+      day: 일
+      hour: 시
+      minute: 분
+      month: 월
+      second: 초
+      year: 년
+  errors:
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: 을(를) 반드시 확인해야 합니다
+      blank: 에 내용을 입력해 주세요
+      confirmation: 은(는) 서로 일치해야 합니다
+      empty: 에 내용을 입력해 주세요
+      equal_to: 은(는) %{count}과 같아야 합니다
+      even: 에 짝수를 입력해 주세요
+      exclusion: 은(는) 이미 예약되어 있는 값입니다
+      greater_than: 은(는) %{count}보다 커야 합니다
+      greater_than_or_equal_to: 은(는) %{count}보다 크거야 같아야 합니다
+      inclusion: 은(는) 목록에 포함되어 있는 값이 아닙니다
+      invalid: 은(는) 올바르지 않은 값입니다
+      less_than: 은(는) %{count}보다 작아야 합니다
+      less_than_or_equal_to: 은(는) %{count}과 작거나 같아야 합니다
+      not_a_number: 에 숫자를 입력해 주세요
+      not_an_integer: 에 정수를 입력해 주세요
+      odd: 에 홀수를 입력해 주세요
+      record_invalid: 데이터 검증에 실패하였습니다. %{errors}
+      taken: 은(는) 이미 존재합니다.
+      too_long: 은(는) %{count}자를 넘을 수 없습니다
+      too_short: 은(는) 적어도 %{count}자를 넘어야 합니다
+      wrong_length: 은(는) %{count}자여야 합니다
+      not_saved: 다음 에러 때문에 저장이 안되었습니다.
+    template:
+      body: ! '다음 항목에 문제가 발견되었습니다:'
+      header:
+        one: 한 개의 오류가 발생해 %{model}를 저장 할 수 없습니다
+        other: ! '%{count}개의 오류가 발생해 %{model}를 저장 할 수 없습니다'
+  helpers:
+    select:
+      prompt: 선택해주세요
+    submit:
+      create: 등록
+      submit: 제출
+      update: 갱신
+  number:
+    currency:
+      format:
+        delimiter: ! ','
+        format: ! '%n%u'
+        precision: 0
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: 원
+    format:
+      delimiter: ! ','
+      precision: 3
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n%u'
+        units:
+          billion: 십억
+          million: 백만
+          quadrillion: 경
+          thousand: 천
+          trillion: 조
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n%u'
+        units:
+          byte: 바이트
+          gb: 기가바이트
+          kb: 킬로바이트
+          mb: 메가바이트
+          tb: 테라바이트
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ', '
+      two_words_connector: ! '와(과) '
+      words_connector: ! ', '
+  time:
+    am: 오전
+    formats:
+      default: ! '%Y/%m/%d %H:%M:%S'
+      long: ! '%Y년 %m월 %d일, %H시 %M분 %S초 %Z'
+      short: ! '%y/%m/%d %H:%M'
+    pm: 오후
+  activerecord:
+    attributes:
+      user:
+        username: "아이디"
+        first_name: "이름"
+        last_name: "성"
+        email: "이메일주소"
+        password: "비밀번호"
+        password_confirmation: "비밀번호 재확인"
+        birthday: "생일"
+        remember_me: "로그인유지"
+        agreement: "약관동의"
+        locale: "언어"
+        gender: "성별"
+        current_password: "현재 비밀번호"

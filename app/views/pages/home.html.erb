@@ -1,0 +1,29 @@
+<style type="text/css">
+  .waves-ripple {background-color: #45BCC2 !important;}
+</style>
+<div id="home" class="content_wrapper">
+  <div class="row">
+    <section class="brief_about large-12 columns">
+    <h4 class="hello animsition"><%= t("pages.home.brief_about.hello") %></h4>
+    <div class="ih-item circle colored effect5">
+      <a href="#">
+        <div class="img"><%= image_tag "https://s3-ap-northeast-1.amazonaws.com/seoyoochan/assets/yoochan.jpg" %></div>
+        <div class="info">
+          <div class="info-back">
+            <h3><%= t("browser_title.default") %></h3>
+            <p><%= t("pages.home.brief_about.avatar.description_html") %></p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <p class="summary"><%= t("pages.home.brief_about.p_html") %></p>
+    <ul class="sns_container">
+      <li class="twitter"><%= link_to "#{fa_icon("twitter")}".html_safe, "https://twitter.com/supergnee", target: "_blank", data: { :"tooltip aria-haspopup" => "true" }, class: "has-tip tip-top radius", title: t("pages.home.brief_about.sns.twitter") %></li>
+      <li class="facebook"><%= link_to "#{fa_icon("facebook")}".html_safe, "https://www.facebook.com/pages/Seo-Yoochan/737714592960287", target: "_blank", data: { :"tooltip aria-haspopup" => "true" }, class: "has-tip tip-top radius", title: t("pages.home.brief_about.sns.facebook") %></li>
+      <li class="google"><%= link_to "#{fa_icon("google-plus")}".html_safe, "https://plus.google.com/105807467934256775171", target: "_blank", data: { :"tooltip aria-haspopup" => "true" }, class: "has-tip tip-top radius", title: t("pages.home.brief_about.sns.google") %></li>
+      <li class="youtube"><%= link_to "#{fa_icon("youtube-play")}".html_safe, "http://www.youtube.com/channel/UCyQ0on7cSpUzweLsIpjGpMg", target: "_blank", data: { :"tooltip aria-haspopup" => "true" }, class: "has-tip tip-top radius", title: t("pages.home.brief_about.sns.youtube") %></li>
+      <li class="github"><%= link_to "#{fa_icon("github-alt")}".html_safe, "https://github.com/bitsnut/", target: "_blank", data: { :"tooltip aria-haspopup" => "true" }, class: "has-tip tip-top radius", title: t("pages.home.brief_about.sns.github") %></li>
+    </ul>
+    </section>
+  </div>
+</div>

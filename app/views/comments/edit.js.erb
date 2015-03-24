@@ -1,0 +1,19 @@
+$(document).bind('DOMSubtreeModified',function(){
+    $('.autosize').autosize();
+});
+
+var cancel = $('<div class="cancel"><%= link_to t("default.cancel"), "#", class: "button radius tiny alert" %></div>');
+var edit_form = $('<%= j render("form") %>').fadeIn();
+var contents_wrapper = $('.comment.id_<%= @comment.id %> .contents_wrapper');
+var contents_container = $('.comment.id_<%= @comment.id %> .contents_container');
+
+contents_container.prepend(edit_form);
+$('.comment.id_<%= @comment.id %> #comment_form_container .submit').after(cancel);
+contents_wrapper.css('display', 'none');
+
+$('.comment.id_<%= @comment.id %> .cancel').click(function(evt){
+    evt.preventDefault();
+    $('.comment.id_<%= @comment.id %> #comment_form_container').remove();
+    contents_wrapper.css('display', 'block');
+
+});
