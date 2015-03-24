@@ -8,6 +8,7 @@
 
 
 u = User.new(email: 'admin@admin.com', first_name: 'admin', last_name: 'Seo', gender: 'male', locale: 'en')
+u.add_role :admin
 u.skip_confirmation!
 u.save(validate: false)
 
