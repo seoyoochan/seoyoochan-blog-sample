@@ -1,13 +1,13 @@
 seoyoochan-blog-sample
 ======================
-![mainpage]: (./screenshots/main.png)<br/>
-![search]: (./screenshots/search.png)<br/>
-![articles]: (./screenshots/articles.png)<br/>
-![reading]: (./screenshots/reading.png)<br/>
-![comment]: (./screenshots/comment.png)<br/>
-![small display]: (./screenshots/small_display.png)<br/>
-![profile edit]: (./screenshots/profile_edit.png)<br/>
-![writing]: (./screenshots/writing.png)<br/>
+![mainpage]: (https://github.com/seoyoochan/seoyoochan-blog-sample/screenshots/main.png)<br/>
+![search]: (https://github.com/seoyoochan/seoyoochan-blog-sample/screenshots/search.png)<br/>
+![articles]: (https://github.com/seoyoochan/seoyoochan-blog-sample/screenshots/articles.png)<br/>
+![reading]: (https://github.com/seoyoochan/seoyoochan-blog-sample/screenshots/reading.png)<br/>
+![comment]: (https://github.com/seoyoochan/seoyoochan-blog-sample/screenshots/comment.png)<br/>
+![small display]: (https://github.com/seoyoochan/seoyoochan-blog-sample/screenshots/small_display.png)<br/>
+![profile edit]: (https://github.com/seoyoochan/seoyoochan-blog-sample/screenshots/profile_edit.png)<br/>
+![writing]: (https://github.com/seoyoochan/seoyoochan-blog-sample/screenshots/writing.png)<br/>
 
 Notice:
  This application is only for studying purpose.<br/>
