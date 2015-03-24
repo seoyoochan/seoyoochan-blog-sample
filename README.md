@@ -1,13 +1,13 @@
 seoyoochan-blog-sample
 ======================
-![mainpage]: (/screenshots/main.png?raw=true "Main Page")
-![search]: (/screenshots/search.png?raw=true "Search")
-![articles]: (/screenshots/articles.png?raw=true "Articles")
-![reading]: (/screenshots/reading.png?raw=true "Reading")
-![comment]: (/screenshots/comment.png?raw=true "Comment")
-![small display]: (/screenshots/small_display.png?raw=true "Small Display")
-![profile edit]: (/screenshots/profile_edit.png?raw=true "Profile Edit")
-![writing]: (/screenshots/writing.png?raw=true "Writing")
+![mainpage]: (./screenshots/main.png?raw=true "Main Page")<br/>
+![search]: (./screenshots/search.png?raw=true "Search")<br/>
+![articles]: (./screenshots/articles.png?raw=true "Articles")<br/>
+![reading]: (./screenshots/reading.png?raw=true "Reading")<br/>
+![comment]: (./screenshots/comment.png?raw=true "Comment")<br/>
+![small display]: (./screenshots/small_display.png?raw=true "Small Display")<br/>
+![profile edit]: (./screenshots/profile_edit.png?raw=true "Profile Edit")<br/>
+![writing]: (./screenshots/writing.png?raw=true "Writing")<br/>
 
 Notice:
  This application is only for studying purpose.<br/>
